@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.5;
 
         & {
-            @media (min-width: 375px){
+            @media (min-width: 425px){
                 font-size: 1.125rem;
 
             }

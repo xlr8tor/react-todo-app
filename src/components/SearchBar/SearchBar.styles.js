@@ -46,7 +46,7 @@ export const Content= styled.div`
         border-radius: 15px;
     }
 
-    @media (min-width: 375px){
+    @media (min-width: 425px){
         input[type=checkbox]{
             height: 30px;
             width: 30px;

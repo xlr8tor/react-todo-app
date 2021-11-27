@@ -18,6 +18,7 @@ export const Content = styled.div`
     padding: 20px;
     background-color: ${props => props.theme.background};
 
+
   
 
     p {
@@ -27,7 +28,9 @@ export const Content = styled.div`
     }
 
     img {
-        transform: scale(90%)
+        scale: .8;
+        transform: scale(80%);
+        margin-inline-start: 10px;
     }
     img:hover {
         cursor: pointer;
@@ -35,13 +38,14 @@ export const Content = styled.div`
 
     input[type=checkbox]{
         position: absolute;
+        -webkit-postion: absolute;
         width: 20px;
         height: 20px;
         left: 0;
         cursor: pointer;
-        margin: 15px 18px;
+        margin: 0 18px;
         appearance: none;
-        --webkit-appearance: none;
+        -webkit-appearance: none;
         border: 1px solid ${props => props.theme.border};
         border-radius: 15px;
     }
@@ -70,15 +74,16 @@ export const Content = styled.div`
         border: 1px solid transparent;
         background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box;
         -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        
     }
 
-    @media (min-width: 375px){
+    @media (min-width: 425px){
         input[type=checkbox]{
             height: 30px;
             width: 30px;
-            margin: 15px 25px;
+            margin: 0 25px;
         }
 
         p {
