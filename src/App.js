@@ -38,13 +38,14 @@ function App() {
 
   const submit = (todo) => {
     setTodolist((prev) => {
-      return [...prev,{id: prev.id + 1, todo: todo}]
+      console.log([...prev,{id: prev[prev.length - 1].id + 1, todo: todo}])
+      return [...prev,{id: prev[prev.length - 1].id + 1, todo: todo, active: true, completed: false}]
     })
 
   }
 
  const remove = (id) => {
-    setTodolist(todoList.filter(todo => todo.id !== id))
+    setTodolist(todoList.filter(todo => todo.id !== id));
  }
 
  const isActive = (value) => {
