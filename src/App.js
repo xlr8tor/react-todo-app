@@ -13,7 +13,6 @@ import { darkTheme, lightTheme } from './Theme';
 
 
 
-
 function App() {
   const [theme , setTheme ] = useState("light");
   const [filter, setFilter] = useState('All');
@@ -23,8 +22,6 @@ function App() {
                                             {id:4,todo:"Read for 1 hour", active: true, completed: false},
                                             {id:5,todo:"Pick up groceries", active: true, completed: false},
                                             {id:6,todo:"Complete Todo App on Frontend Mentor", active: true, completed: false}]);
-
- 
   
   const themeToggler = () => {
     theme === "light"? setTheme("dark"): setTheme("light");
@@ -38,7 +35,6 @@ function App() {
 
   const submit = (todo) => {
     setTodolist((prev) => {
-      console.log([...prev,{id: prev[prev.length - 1].id + 1, todo: todo}])
       return [...prev,{id: prev[prev.length - 1].id + 1, todo: todo, active: true, completed: false}]
     })
 
@@ -61,7 +57,7 @@ function App() {
   return (
     <div className="App">
     <div className="container">
-      <ThemeProvider theme={theme === 'light'? lightTheme: darkTheme}>
+      <ThemeProvider theme={theme === "light"? lightTheme: darkTheme}>
           <Header theme={theme} themeToggler={themeToggler}/>
           <SearchBar submit={submit}/>
           <Grid 
